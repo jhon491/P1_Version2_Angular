@@ -1,0 +1,137 @@
+<!-- Seccion 2: Medicos de la clinica  -->
+  <!-- Cuerpo principal con barra lateral y productos -->
+  <div id="seccion2-medicos" class="row">
+
+    <h3 class="col-12 text-center mb-3">Sección 2: Médicos</h3>
+    <br>
+    <br>
+    <br>
+
+    <!-- Barra lateral -->
+    <aside class="col-12 col-sm-4 col-md-4">
+        <h2>Especialidades</h2>
+        <div class="list-group">
+            @for (especialidad of especialidades; track especialidad.nombre) {
+
+                <a href="#" class="list-group-item list-group-item-action text-primary text-center"
+                (click)="seleccionarEspecialidad(especialidad, $event)">
+                    {{ especialidad.nombre }}
+                </a>
+            }
+        </div>
+
+        <div id="texto-info" class="mt-3 text-muted" style="min-height: 50px;">{{ textoInfo() }}</div>
+    </aside>
+
+    <!-- Sección de médicos -->
+    <main  class="col-12 col-sm-8 col-md-8">
+        <h2>Médicos</h2>
+        <div class="row g-3">
+            
+            <!-- Medico 1 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico1.png" class="card-img-top img-fluid" alt="Juliana Montenegro Ruiz">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Juliana Montenegro Ruiz</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Pediatra</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Neonatología</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Mi motivación es asegurar que cada niño tenga un comienzo de vida saludable y feliz</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 2 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico2.png" class="card-img-top img-fluid" alt="Alejandro Ramirez Valencia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Alejandro Ramirez Valencia</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Médico General</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Terapia Neural</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Creo en la capacidad del cuerpo para sanar de forma natural y compasiva</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 3 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico3.png" class="card-img-top img-fluid" alt="Mariana Torrez Valencia">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Mariana Torrez Valencia</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Psicóloga Clínica</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Terapia Cognitivo-Conductual</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Acompañar a mis pacientes hacia el bienestar mental y emocional es mi vocación</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 4 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico4.png" class="card-img-top img-fluid" alt="Gabriela Navarro Quintero">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Gabriela Navarro Quintero</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Cardióloga</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Ecocardiografía</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Me dedico a cuidar el corazón con prevención, precisión y profunda empatía</p>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 5 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico5.png" class="card-img-top img-fluid" alt="Mauricio Cabrera Ortiz">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Mauricio Cabrera Ortiz</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Fisioterapeuta</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Rehabilitación Deportiva</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Devolver la movilidad y mejorar la calidad de vida es mi mayor satisfacción</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>    
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medico 6 -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card h-100 border">
+                    <img src="img/medico6.png" class="card-img-top img-fluid" alt="Carlos Mendoza Salas">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center">Carlos Mendoza Salas</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-center">Dermatólogo</h6>
+                        <p class="card-text mb-1"><small><strong>Subespecialidad:</strong> Dermatología Oncológica</small></p>
+                        <br>
+                        <p class="card-text flex-grow-1">Mi compromiso es cuidar tu piel y mejorar la confianza de mis pacientes</p>
+                        <br>
+                        <a href="#agendar-cita" class="btn btn-primary mt-auto w-100">
+                            <i class="fas fa-calendar-check me-1"></i> Agendar Cita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+  </div>

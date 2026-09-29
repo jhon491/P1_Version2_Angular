@@ -1,0 +1,20 @@
+body{
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.contenedor {
+    min-height: 50vh;
+    position: relative;
+}
+
+footer{
+    padding: 15px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    text-align: center;
+}

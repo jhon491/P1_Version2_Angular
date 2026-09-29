@@ -1,0 +1,38 @@
+footer{
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    border-top: 2px solid #007bff;
+}
+
+footer p{
+    margin: 2px 0;
+}
+
+.footer-redes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer-redes .red-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-redes .red-icon:hover {
+    transform: translateY(-3px);
+    background-color: #0056b3;
+    color: #ffffff;
+}

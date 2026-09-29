@@ -1,0 +1,203 @@
+<div id="seccion3-registro" class="container my-5">
+  <h3 class="text-center mb-4">Sección 3: Registrar nuevos usuarios</h3>
+
+  <!-- Formulario Registrar Paciente -->
+  <div class="card p-4 mb-4 shadow-sm">
+    <h2 class="text-center mb-4 lead fw-bold">Registrar Paciente</h2>
+    <form [formGroup]="formPaciente" (ngSubmit)="registrarPaciente()">
+
+      <div class="mb-4">
+        <label for="identificacionPaciente" class="form-label">Tipo de Identificación:</label>
+        <select id="identificacionPaciente" class="form-control" formControlName="tipoIdentificacion">
+          <option value="" disabled>Seleccione un tipo de identificación</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pas">Pasaporte</option>
+        </select>
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.tipoIdentificacion) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="numero-identificacionPaciente" class="form-label">Número de Identificación:</label>
+        <input type="text" id="numero-identificacionPaciente" class="form-control" placeholder="Número de identificación" formControlName="identificacion">
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.identificacion) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="nombresPaciente" class="form-label">Nombres:</label>
+        <input type="text" id="nombresPaciente" class="form-control" placeholder="Nombres" formControlName="nombres">
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.nombres) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="apellidosPaciente" class="form-label">Apellidos:</label>
+        <input type="text" id="apellidosPaciente" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.apellidos) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="correo-electronico" class="form-label">Correo Electrónico:</label>
+        <input type="email" id="correo-electronico" class="form-control" placeholder="Correo electrónico" formControlName="correoElectronico">
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.correoElectronico) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label d-block">Género:</label>
+        <div class="d-flex justify-content-start">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="femenino" value="femenino" formControlName="genero">
+            <label class="form-check-label" for="femenino">Femenino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="masculino" value="masculino" formControlName="genero">
+            <label class="form-check-label" for="masculino">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="otro" value="otro" formControlName="genero">
+            <label class="form-check-label" for="otro">Otro</label>
+          </div>
+        </div>
+        <span class="form-text text-danger">{{ mensajeError(formPaciente.controls.genero) }}</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="formPaciente.invalid">Agregar Paciente</button>
+    </form>
+  </div>
+
+  <!-- Formulario Registrar Médico -->
+  <div class="card p-4 mb-4 shadow-sm">
+    <h2 class="text-center mb-4 lead fw-bold">Registrar Médico</h2>
+    <form [formGroup]="formMedico" (ngSubmit)="registrarMedico()">
+
+      <div class="mb-4">
+        <label for="identificacionMedico" class="form-label">Tipo de Identificación:</label>
+        <select id="identificacionMedico" class="form-control" formControlName="tipoIdentificacion">
+          <option value="" disabled>Seleccione un tipo de identificación</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="ce">Cédula de Extranjería</option>
+          <option value="pas">Pasaporte</option>
+        </select>
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.tipoIdentificacion) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="numero-identificacionMedico" class="form-label">Número de Identificación:</label>
+        <input type="text" id="numero-identificacionMedico" class="form-control" placeholder="Número de identificación" formControlName="identificacion">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.identificacion) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="nombresMedico" class="form-label">Nombres:</label>
+        <input type="text" id="nombresMedico" class="form-control" placeholder="Nombres" formControlName="nombres">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.nombres) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="apellidosMedico" class="form-label">Apellidos:</label>
+        <input type="text" id="apellidosMedico" class="form-control" placeholder="Apellidos" formControlName="apellidos">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.apellidos) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="especialidadMedico" class="form-label">Especialidad:</label>
+        <input type="text" id="especialidadMedico" class="form-control" placeholder="Especialidad" formControlName="especialidad">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.especialidad) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="horarioAtencionMedico" class="form-label">Horario de Atención:</label>
+        <input type="text" id="horarioAtencionMedico" class="form-control" placeholder="Horario de Atención" formControlName="horario_atencion">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.horario_atencion) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="aniosExperienciaMedico" class="form-label">Años de Experiencia:</label>
+        <input type="number" id="aniosExperienciaMedico" class="form-control" placeholder="Años de Experiencia" formControlName="anios_experiencia">
+        <span class="form-text text-danger">{{ mensajeError(formMedico.controls.anios_experiencia) }}</span>
+      </div>
+
+      <div class="mb-4">
+        <label for="bibliografiaMedico" class="form-label">Bibliografía:</label>
+        <input type="text" id="bibliografiaMedico" class="form-control" placeholder="Bibliografía" formControlName="bibliografia">
+      </div>
+
+      <button id="agendar-cita" type="submit" class="btn btn-primary" [disabled]="formMedico.invalid">Agregar Médico</button>
+    </form>
+  </div>
+
+  <!-- Formulario Registrar Citas Médicas -->
+  <div class="card p-4 mb-4 shadow-sm">
+    <h2 class="text-center mb-4 lead fw-bold">Registrar Citas Médicas</h2>
+    <form [formGroup]="formCita" (ngSubmit)="registrarCita()">
+
+      <div class="mb-4">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" id="fecha" class="form-control" formControlName="fecha">
+      </div>
+
+      <div class="mb-4">
+        <label for="horaInicio" class="form-label">Hora Inicio</label>
+        <input type="time" id="horaInicio" class="form-control" formControlName="horaInicio">
+      </div>
+
+      <div class="mb-4">
+        <label for="horaFin" class="form-label">Hora Fin</label>
+        <input type="time" id="horaFin" class="form-control" formControlName="horaFin">
+        @if (formCita.hasError('horaFinInvalida') && formCita.controls.horaFin.dirty) {
+          <span class="form-text text-danger">La hora fin debe ser mayor que la hora inicio.</span>
+        }
+      </div>
+
+      <div class="mb-4">
+        <label for="medicoSelect" class="form-label">Médico</label>
+        <select id="medicoSelect" class="form-control" formControlName="medicoId">
+          <option [ngValue]="null" disabled>Seleccione un médico</option>
+          @for (medico of medicos(); track medico.id) {
+            <option [ngValue]="medico.id">{{ medico.nombres }} {{ medico.apellidos }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label for="pacienteSelect" class="form-label">Paciente</label>
+        <select id="pacienteSelect" class="form-control" formControlName="pacienteId">
+          <option [ngValue]="null" disabled>Seleccione un paciente</option>
+          @for (paciente of pacientes(); track paciente.id) {
+            <option [ngValue]="paciente.id">{{ paciente.nombres }} {{ paciente.apellidos }}</option>
+          }
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="formCita.invalid">Agregar Cita</button>
+    </form>
+  </div>
+
+  <!-- Tabla de Citas Registradas -->
+  <h2 class="text-center mb-4 lead fw-bold">Citas Registradas</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle">
+      <thead class="table-primary text-center">
+        <tr>
+          <th>Fecha</th>
+          <th>Hora Inicio</th>
+          <th>Hora Fin</th>
+          <th>Médico</th>
+          <th>Paciente</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (cita of citas(); track cita.id) {
+          <tr>
+            <td>{{ cita.fecha }}</td>
+            <td>{{ cita.horaInicio }}</td>
+            <td>{{ cita.horaFin }}</td>
+            <td>{{ cita.medico.nombres }} {{ cita.medico.apellidos }}</td>
+            <td>{{ cita.paciente.nombres }} {{ cita.paciente.apellidos }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

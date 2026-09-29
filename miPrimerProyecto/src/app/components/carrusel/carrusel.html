@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div id="seccion1-carouselProductos" class="carousel slide mb-4" data-bs-ride="carousel">
+    <h3 class="text-center mb-3">Sección 1: Promociones</h3>
+
+    <div class="carousel-inner">
+      @for (imagen of imagenes; track imagen.src; let primera = $first) {
+        <div class="carousel-item" [class.active]="primera">
+          <img [src]="imagen.src" class="d-block w-100" [alt]="imagen.alt">
+        </div>
+      }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#seccion1-carouselProductos" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#seccion1-carouselProductos" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+</div>

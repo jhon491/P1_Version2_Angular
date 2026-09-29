@@ -1,0 +1,12 @@
+<div class="notificaciones-contenedor">
+  @for (n of notificaciones(); track n.id) {
+    <div
+      class="notificacion"
+      [class.notificacion-exito]="n.tipo === 'exito'"
+      [class.notificacion-error]="n.tipo === 'error'"
+    >
+      <span class="notificacion-icono">{{ icono(n.tipo) }}</span>
+      <span class="notificacion-texto">{{ n.mensaje }}</span>
+    </div>
+  }
+</div>
